@@ -28,6 +28,11 @@ public class AlfrescoLoginSteps extends ScenarioSteps {
         getDriver().get(url);
         getDriver().manage().window().maximize();
     }
+    
+    @Step("Close the browser")
+    public void closeBrowser(){
+     alfrescoLoginPage.closeBrowser();
+    }
 
     @Step
     public void verifyLoginPageIsOpen() {

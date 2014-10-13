@@ -6,7 +6,7 @@ public class TestSuiteDebug extends ThucydidesJUnitStories {
 
 	public TestSuiteDebug() {
 
-		findStoriesCalled("**/consult_dictionary/PO-22InviteUsers.story");
+		findStoriesCalled("**/consult_dictionary/PO-6CreateSitePermission.story");
 
 	}
 }

@@ -39,10 +39,6 @@ public class AlfrescoDocumentLibrarySteps extends ScenarioSteps {
         alfrescoDocumentLibraryPage.verifyNodesInBreadcrumbs(nodes);
     }
 
-    @Step("Click on 'Invite people'")
-	public void clickOnInvitePeople() {
-		alfrescoDocumentLibraryPage.clickOnInvitePeople();
-	}
     
     @Step
     public void selectDocumentFromDocumentLibrary(String... docPath) {

@@ -199,8 +199,7 @@ public class AlfrescoDocumentLibraryPage extends AbstractPage {
 	@FindBy(css = "div[id$='default-documents']")
 	private WebElement defaultDocuments;
 	
-	@FindBy(css = "a[id*='invite-button'] span")
-	private WebElement invitePeopleButton;
+
 
 
 	public void logout() {
@@ -465,10 +464,7 @@ public class AlfrescoDocumentLibraryPage extends AbstractPage {
 								docPath));
 	}
 
-	public void clickOnInvitePeople() {
-		invitePeopleButton.click();
-		Assert.assertTrue("The e'Invite people' button was not found", invitePeopleButton.isDisplayed());
-	}
+
 	
 	public void checkThatDocumentExists(String... docPath) {
 		getDocumentElementFromDocumentLibrary(true, docPath);

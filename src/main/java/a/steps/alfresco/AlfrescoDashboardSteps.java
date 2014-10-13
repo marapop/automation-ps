@@ -13,209 +13,259 @@ import a.pages.alfresco.AlfrescoDashboardPage;
 
 public class AlfrescoDashboardSteps extends ScenarioSteps {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public AlfrescoDashboardSteps(Pages pages) {
-        super(pages);
-    }
+	public AlfrescoDashboardSteps(Pages pages) {
+		super(pages);
+	}
 
-    private AlfrescoDashboardPage alfrescoDashboardPage;
+	private AlfrescoDashboardPage alfrescoDashboardPage;
 
-    @Step
-    public void verifyUserButtonProperties(String userName, String lastName) {
-        alfrescoDashboardPage.verifyLoggedInUserDisplayedName(userName,
-                lastName);
-    }
+	@Step
+	public void verifyUserButtonProperties(String userName, String lastName) {
+		alfrescoDashboardPage.verifyLoggedInUserDisplayedName(userName,
+				lastName);
+	}
 
-    @Step
-    public void verifyMyNewSite(String siteName) {
-        Assert.assertTrue("The site named '" + siteName
-                + "' was not found on dashboard!",
-                alfrescoDashboardPage.isSiteOnDashboard(siteName));
-    }
+	@Step
+	public void clickCreateSiteFromUserDashboard() {
+		alfrescoDashboardPage.clickCreateSiteFromUserDashboard();
+	}
+	
+	@Step
+	public void checkInvitePeople() throws Exception {
+		alfrescoDashboardPage.checkInvitePeople();
+	}
 
-    @Step
-    public void verifyAfterDeleteTheSite(String siteName) {
-        Assert.assertFalse("The site named '" + siteName
-                + "' should not be listed on dashboard!",
-                alfrescoDashboardPage.isSiteOnDashboard(siteName));
-    }
-    
-    @Step
-    public void clickSiteFinder() {
-    	alfrescoDashboardPage.clickSiteFinder();
-    }
-    
-    @Step
-    public void searchTheSiteCreatedByOther(String siteName) {
-    	alfrescoDashboardPage.searchTheSiteCreatedByOther(siteName);
-    }
-    
-    @Step
-    public boolean isSiteOnDashboard(String siteName) {
-    	 return alfrescoDashboardPage.isSiteOnDashboard(siteName);
-    }
-    
-    @Step("Select site from dashboard")
+	@Step
+	public void checkCreateSite() throws Exception{
+		alfrescoDashboardPage.checkCreateSite();
+	}
+	
+	@Step
+	public void clickCreateSiteFromSitesMenu() {
+		alfrescoDashboardPage.clickCreateSiteFromSitesMenu();
+	}
+	
+	@Step
+	public void verifyIfTheCreateSitePopUpAppear() {
+		alfrescoDashboardPage.verifyIfTheCreateSitePopUpAppear();
+	}
+	
+	@Step
+	public void clickOnLogOut() {
+		alfrescoDashboardPage.clickOnLogOut();
+	}
+	@Step
+	public void createSite(String siteName1){
+		alfrescoDashboardPage.createSite(siteName1);
+	}
+	@Step
+	public void invitePeopleButton() throws Exception {
+		alfrescoDashboardPage.invitePeopleButton();
+	}
+
+	@Step
+	public void deleteGroup(String searchedUserName) {
+		alfrescoDashboardPage.deleteGroup(searchedUserName);
+	}
+
+	@Step
+	public void addGroup(String groupName, String searchedUserName) {
+		alfrescoDashboardPage.addGroup(groupName, searchedUserName);
+	}
+
+	@Step
+	public void verifyMyNewSite(String siteName) {
+		Assert.assertTrue("The site named '" + siteName
+				+ "' was not found on dashboard!",
+				alfrescoDashboardPage.isSiteOnDashboard(siteName));
+	}
+
+	@Step
+	public void verifyAfterDeleteTheSite(String siteName) {
+		Assert.assertFalse("The site named '" + siteName
+				+ "' should not be listed on dashboard!",
+				alfrescoDashboardPage.isSiteOnDashboard(siteName));
+	}
+
+	@Step
+	public void clickSiteFinder() {
+		alfrescoDashboardPage.clickSiteFinder();
+	}
+
+	@Step
+	public void searchTheSiteCreatedByOther(String siteName) {
+		alfrescoDashboardPage.searchTheSiteCreatedByOther(siteName);
+	}
+
+	@Step
+	public boolean isSiteOnDashboard(String siteName) {
+		return alfrescoDashboardPage.isSiteOnDashboard(siteName);
+	}
+
+	@Step("Select site from dashboard")
 	public void selectSiteOnDashboard(String siteName) {
 		alfrescoDashboardPage.selectSiteFromDashboard(siteName);
 	}
-    
+
 	@Step
 	public void openSiteModal(String siteName) {
 		String siteUrl = System.getProperty(Constants.URL_PROPERTY);
-		if(siteUrl.contains("null")){
+		if (siteUrl.contains("null")) {
 			siteUrl = Constants.ALFRESCO_URL;
 		}
-		getDriver().get(siteUrl + Constants.SITE_PREFIX + siteName.toLowerCase() + Constants.SITE_SUFIX);
+		getDriver().get(
+				siteUrl + Constants.SITE_PREFIX + siteName.toLowerCase()
+						+ Constants.SITE_SUFIX);
 		waitABit(Constants.WAIT_TIME_SHORT);
 	}
-	
-	 @Step
-	    public void openTheSiteFound(String siteName) {
-	    	alfrescoDashboardPage.openTheSiteFound(siteName);
-	    }
 
+	@Step
+	public void openTheSiteFound(String siteName) {
+		alfrescoDashboardPage.openTheSiteFound(siteName);
+	}
 
-    @Step
-    public void selectSiteFromDashboard(String siteName) {
-        alfrescoDashboardPage.selectSiteFromDashboard(siteName);
-    }
+	@Step
+	public void selectSiteFromDashboard(String siteName) {
+		alfrescoDashboardPage.selectSiteFromDashboard(siteName);
+	}
 
-    @Step
-    public void verifyMyNewTask(String taskName) {
-        Assert.assertTrue("The task named '" + taskName
-                + "' was not found on dashboard",
-                alfrescoDashboardPage.isTaskOnDashboard(taskName));
-    }
+	@Step
+	public void verifyMyNewTask(String taskName) {
+		Assert.assertTrue("The task named '" + taskName
+				+ "' was not found on dashboard",
+				alfrescoDashboardPage.isTaskOnDashboard(taskName));
+	}
 
-    @Step
-    public void checkTaskStatus(String taskName, String taskStatus) {
-        Assert.assertTrue("The task named '" + taskName
-                + "' was not found on dashboard and the '" + taskStatus
-                + "' is not correct",
-                alfrescoDashboardPage.checkTaskStatus(taskName, taskStatus));
-    }
+	@Step
+	public void checkTaskStatus(String taskName, String taskStatus) {
+		Assert.assertTrue("The task named '" + taskName
+				+ "' was not found on dashboard and the '" + taskStatus
+				+ "' is not correct",
+				alfrescoDashboardPage.checkTaskStatus(taskName, taskStatus));
+	}
 
-    @Step
-    public void checkTaskWarningNotification(String taskname) {
-        alfrescoDashboardPage.checkTaskWarningNotification(taskname);
-    }
+	@Step
+	public void checkTaskWarningNotification(String taskname) {
+		alfrescoDashboardPage.checkTaskWarningNotification(taskname);
+	}
 
-    @Step
-    public void selectTaskFromDashboard(String... taskIdentifiers) {
-        alfrescoDashboardPage.selectTaskFromDashboard(taskIdentifiers);
-    }
+	@Step
+	public void selectTaskFromDashboard(String... taskIdentifiers) {
+		alfrescoDashboardPage.selectTaskFromDashboard(taskIdentifiers);
+	}
 
-    @Step
-    public void verifyThatTheTaskIsNotInTheDashlet(String... taskIdentifiers) {
-        alfrescoDashboardPage.verifyThatTheTaskIsNotInTheDashlet(taskIdentifiers);
-    }
+	@Step
+	public void verifyThatTheTaskIsNotInTheDashlet(String... taskIdentifiers) {
+		alfrescoDashboardPage
+				.verifyThatTheTaskIsNotInTheDashlet(taskIdentifiers);
+	}
 
-    @Step
-    public boolean checkIfUserIsLoggedIn() {
-        return alfrescoDashboardPage.checkIfUserIsLoggedIn();
-    }
+	@Step
+	public boolean checkIfUserIsLoggedIn() {
+		return alfrescoDashboardPage.checkIfUserIsLoggedIn();
+	}
 
-    @Step
-    public void logout() {
-        alfrescoDashboardPage.logout();
-    }
-    
-    @Step
-    public void clickOnAcceptInvitation(){
-    	alfrescoDashboardPage.clickOnAcceptInvitation();
-    }
-    
-    @Step
-    public void acceptRoleInvitation(){
-    	alfrescoDashboardPage.acceptRoleInvitation();
-    }
+	@Step
+	public void logout() {
+		alfrescoDashboardPage.clickOnLogOut();
+	}
 
-    @Step
-    public boolean logoutIfLoggedIn() throws AWTException {
-        return alfrescoDashboardPage.logoutIfLoggedIn();
-    }
+	@Step
+	public void clickOnAcceptInvitation() {
+		alfrescoDashboardPage.clickOnAcceptInvitation();
+	}
 
-    @Step
-    public void clickOnStartWorkflowItem() {
-        alfrescoDashboardPage.clickOnStartWorkflowItem();
-    }
+	@Step
+	public void acceptRoleInvitation() {
+		alfrescoDashboardPage.acceptRoleInvitation();
+	}
 
-    @Step
-    public void closeNewestOpenedTabIfExists() {
-        alfrescoDashboardPage.closeNewestOpenedTabIfExists();
-    }
+	@Step
+	public boolean logoutIfLoggedIn() throws AWTException {
+		return alfrescoDashboardPage.logoutIfLoggedIn();
+	}
 
-    @Step
-    public void clickOnDashboardHeaderButton(String... buttonTitles) {
-        alfrescoDashboardPage.clickOnDashboardHeaderButton(buttonTitles);
-    }
+	@Step
+	public void clickOnStartWorkflowItem() {
+		alfrescoDashboardPage.clickOnStartWorkflowItem();
+	}
 
-    @Step
-    public void clickOnRepositoryItem() {
-        alfrescoDashboardPage.clickOnRepositoryItem();
-    }
+	@Step
+	public void closeNewestOpenedTabIfExists() {
+		alfrescoDashboardPage.closeNewestOpenedTabIfExists();
+	}
 
-    @Step
-    public void insertSiteNameForSearch(String name) {
-        alfrescoDashboardPage.insertSiteNameForSearch(name);
-    }
+	@Step
+	public void clickOnDashboardHeaderButton(String... buttonTitles) {
+		alfrescoDashboardPage.clickOnDashboardHeaderButton(buttonTitles);
+	}
 
-    @Step
-    public void selectSiteFromResults(String name) {
-        alfrescoDashboardPage.selectSiteFromResults(name);
-    }
+	@Step
+	public void clickOnRepositoryItem() {
+		alfrescoDashboardPage.clickOnRepositoryItem();
+	}
 
-    @Step
-    public void clickOnJoinSiteFromResults(String username, String siteName) {
-        alfrescoDashboardPage.clickOnJoinSiteFromResults(username, siteName);
-    }
+	@Step
+	public void insertSiteNameForSearch(String name) {
+		alfrescoDashboardPage.insertSiteNameForSearch(name);
+	}
 
-    @Step
-    public void clickOnLeaveSiteFromResults(String username, String siteName) {
-        alfrescoDashboardPage.clickOnLeaveSiteFromResults(username, siteName);
-    }
+	@Step
+	public void selectSiteFromResults(String name) {
+		alfrescoDashboardPage.selectSiteFromResults(name);
+	}
 
-    @Step
-    public void selectSectionFromConsole(String term) {
-        alfrescoDashboardPage.selectSectionFromConsole(term);
-    }
+	@Step
+	public void clickOnJoinSiteFromResults(String username, String siteName) {
+		alfrescoDashboardPage.clickOnJoinSiteFromResults(username, siteName);
+	}
 
-    @Step
-    public void clickOnAddCategoryIcon() {
-        alfrescoDashboardPage.clickOnAddCategoryIcon();
-    }
+	@Step
+	public void clickOnLeaveSiteFromResults(String username, String siteName) {
+		alfrescoDashboardPage.clickOnLeaveSiteFromResults(username, siteName);
+	}
 
-    @Step
-    public void clickOnSearchIcon() {
-        alfrescoDashboardPage.clickOnSearchIcon();
-    }
+	@Step
+	public void selectSectionFromConsole(String term) {
+		alfrescoDashboardPage.selectSectionFromConsole(term);
+	}
 
-    @Step
-    public void clickOnAdvancedSearchLink() {
-        alfrescoDashboardPage.clickOnAdvancedSearchLink();
-    }
+	@Step
+	public void clickOnAddCategoryIcon() {
+		alfrescoDashboardPage.clickOnAddCategoryIcon();
+	}
 
-    @Step
-    public void clickOnActivitiWorkflowConsoleLink() {
-        alfrescoDashboardPage.clickOnActivitiWorkflowConsoleLink();
-    }
+	@Step
+	public void clickOnSearchIcon() {
+		alfrescoDashboardPage.clickOnSearchIcon();
+	}
 
-    @Step
-    public void deleteCategory(String catName) {
-        alfrescoDashboardPage.deleteCategory(catName);
-    }
+	@Step
+	public void clickOnAdvancedSearchLink() {
+		alfrescoDashboardPage.clickOnAdvancedSearchLink();
+	}
 
-    @Step
-    public void checkDocumentStatusInMyDocumentsList(String docName,
-            String actionName, String siteName) {
-        alfrescoDashboardPage.checkDocumentStatusInMyDocumentsList(docName,
-                actionName, siteName);
-    }
+	@Step
+	public void clickOnActivitiWorkflowConsoleLink() {
+		alfrescoDashboardPage.clickOnActivitiWorkflowConsoleLink();
+	}
 
-    @Step
-    public void checkThatMenuOptionDoesntExists(String... menuOption) {
-        alfrescoDashboardPage.checkThatMenuOptionDoesntExists(menuOption);
-    }
+	@Step
+	public void deleteCategory(String catName) {
+		alfrescoDashboardPage.deleteCategory(catName);
+	}
+
+	@Step
+	public void checkDocumentStatusInMyDocumentsList(String docName,
+			String actionName, String siteName) {
+		alfrescoDashboardPage.checkDocumentStatusInMyDocumentsList(docName,
+				actionName, siteName);
+	}
+
+	@Step
+	public void checkThatMenuOptionDoesntExists(String... menuOption) {
+		alfrescoDashboardPage.checkThatMenuOptionDoesntExists(menuOption);
+	}
 }
