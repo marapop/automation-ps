@@ -1,0 +1,5 @@
+Username,Password,Display Username,Folder Name,Folder Title,Folder Description,Content Name,Content Title,Content Description,Content Body,Upload File,Lang topic,First Name,Last Name,User Email,Client Name,Client Pass,User Role,
+admin,admin,Administrator,FolderName,fTitlee,body for the folder,CName1,C Title1,C descriptionnnnnn1,Body11  text for content to create,test.txt,asset filled,John,Doe,jd@example.com,john,johndoe,Manager,
+admin,admin,Administrator,FolderName,fTitlee,body for the folder,CName1,C Title1,C descriptionnnnnn1,Body11  text for content to create,test.txt,asset filled,John,Doe,jd@example.com,john,johndoe,Collaborator,
+admin,admin,Administrator,FolderName,fTitlee,body for the folder,CName1,C Title1,C descriptionnnnnn1,Body11  text for content to create,test.txt,asset filled,John,Doe,jd@example.com,john,johndoe,Contributor,
+admin,admin,Administrator,FolderName,fTitlee,body for the folder,CName1,C Title1,C descriptionnnnnn1,Body11  text for content to create,test.txt,asset filled,John,Doe,jd@example.com,john,johndoe,Consumer,

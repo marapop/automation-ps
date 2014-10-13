@@ -1,0 +1,56 @@
+<xhtmlDocumentRule>
+
+    <hierarchyLevelNames>
+        <level>Root</level>
+        <level>Unit</level>
+        <level>Lesson</level>
+        <level>Section</level>
+        <level>Subsec</level>
+        <level>Subsubsec</level>
+    </hierarchyLevelNames>
+
+    <rootStyles>
+        <style>wordDoc</style>
+    </rootStyles>
+
+    <unitStyles>
+        <style>headUnit</style>
+    </unitStyles>
+
+    <lessonHeaderStyles>
+        <style>lessonHead</style>
+    </lessonHeaderStyles>
+
+    <sectionHeaderStyles>
+        <style>headASection</style>
+        <style>headAPractice</style>
+    </sectionHeaderStyles>
+
+    <subSectionHeaderStyles>
+        <style>headBSubsection</style>
+        <style>sprHeadB</style>
+    </subSectionHeaderStyles>
+
+    <subSubSectionHeaderStyles>
+        <style>headCSubsubsection</style>
+    </subSubSectionHeaderStyles>
+
+    <briefStyles>
+        <style>briefDesign</style>
+        <style>briefArtwork</style>
+    </briefStyles>
+
+    <contentBlocks>
+        <contentBlock>
+            <name>grammarBoxes</name>
+            <style>grammarBoxHead</style>
+            <style>grammarBoxText</style>
+        </contentBlock>
+        <contentBlock>
+            <name>languageBoxes</name>
+            <style>languageBoxHead</style>
+            <style>languageBoxText</style>
+        </contentBlock>
+    </contentBlocks>
+
+</xhtmlDocumentRule>

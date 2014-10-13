@@ -1,0 +1,5 @@
+Username,Password,First Name,Last Name,User Email,Client Name,Client Pass,User Role,
+admin,admin,Johnny,Doe,4@example.com,testUser,testUser,Consumer,
+admin,admin,Johnny,Doe,1@example.com,john_aa,johndoe,Manager,
+admin,admin,Johnny,Doe,2@example.com,moon_black,moon_black,Collaborator,
+admin,admin,Johnny,Doe,3@example.com,john_sss,johndoe,Contributor,

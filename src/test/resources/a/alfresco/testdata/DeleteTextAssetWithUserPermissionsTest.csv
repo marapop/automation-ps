@@ -1,0 +1,5 @@
+Username,Password,Content Name,Content Title,Content Description,Content Body,First Name,Last Name,User Email,Client Name,Client Pass,User Role,
+admin,admin,CName1,C Title1,C descriptionnnnnn1,Body11  text for content,Johnny1,Doe1,11@example.com,name1,johndoe,Manager,
+admin,admin,CName2,C Title2,C descriptionnnnnn1,Body22  text for content,Johnny2,Doe2,22@example.com,name2,johndoe,Collaborator,
+admin,admin,CName3,C Title3,C descriptionnnnnn1,Body33  text for content,Johnny3,Doe3,33@example.com,name3,johndoe,Contributor,
+admin,admin,CName4,C Title4,C descriptionnnnnn1,Body44  text for content,Johnny4,Doe4,44@example.com,name4,johndoe,Consumer,

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+	<bean id="ixxus.collections.restrictions.allowedTypesParentVoter" class="com.ixxus.alfresco.ixfe.service.AllowedTypesVoter" parent="AbstractAllowedVoter"
+		init-method="registerParentVoter">
+		<property name="allowedTypeNames" ref="ixxus.collections.restrictions.allowedChildTypeNames" />
+	</bean>
+	
+	<bean id="ixxus.collections.restrictions.allowedTypesChildVoter" class="com.ixxus.alfresco.ixfe.service.AllowedTypesVoter" parent="AbstractAllowedVoter"
+		init-method="registerChildVoter">
+		<property name="allowedTypeNames" ref="ixxus.collections.restrictions.allowedParentTypeNames" />
+	</bean>
+	
+	<bean id="ixxus.collections.restrictions.allowedChildMimeTypesVoter" class="com.ixxus.alfresco.ixfe.service.AllowedMimeTypesVoter" parent="AbstractAllowedVoter"
+		init-method="registerParentVoter">
+		<property name="allowedMimeTypeNames" ref="ixxus.collections.restrictions.allowedChildMimeTypesNames" />
+	</bean>
+
+	<util:map id="ixxus.collections.restrictions.allowedChildTypeNames" map-class="java.util.HashMap">
+		<entry key="ixc:collection" value="cm:content,cm:folder,ixc:collection" />
+		<entry key="cm:folder" value="cm:content"/>
+	</util:map>
+	
+	<util:map id="ixxus.collections.restrictions.allowedParentTypeNames" map-class="java.util.HashMap">
+		<entry key="ixc:collection" value="ixc:collection" />
+		<entry key="cm:folder" value="ixc:collection"/>
+		<entry key="cm:content" value="ixc:collection,cm:folder"/>
+	</util:map>
+	
+	<util:map id="ixxus.collections.restrictions.allowedChildMimeTypesNames" map-class="java.util.HashMap">
+		<entry key="ixc:collection" value="text/plain,application/pdf,image/jpeg,image/png" />
+		<entry key="cm:folder" value="text/plain,application/json,application/msword,application/pdf,image/jpeg,image/png,text/xml,image/tiff,image/gif" />
+	</util:map>
+
+</beans>

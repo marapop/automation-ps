@@ -1,0 +1,5 @@
+Username,Password,First Name,Last Name,User Email,Client Name,Client Pass,First Name1,Last Name1,User Email1,User Name1,User Pass1,User Role,firstName1,User Email1,User Name1,Upload File,File Name,Folder Name,Folder Title,
+admin,admin,John,Doe,jd@example.com,john,johndoe,Jane,Doe,jane@example.com,JaneD,janed,Consumer,JaneD,jane@example.com,jAneD,awine_glasses.jpg,awine_glasses.jpg,cancel checkout upload folder_,upload name,
+admin,admin,John,Doe,jd@example.com,john,johndoe,Jane,Doe,jane@example.com,JaneD,janed,Contributor,JaneD,jane@example.com,jAneD,awine_glasses.jpg,awine_glasses.jpg,cancel checkout upload folder_,upload name,
+admin,admin,John,Doe,jd@example.com,john,johndoe,Jane,Doe,jane@example.com,JaneD,janed,Collaborator,JaneD,jane@example.com,jAneD,awine_glasses.jpg,awine_glasses.jpg,cancel checkout upload folder_,upload name,
+admin,admin,John,Doe,jd@example.com,john,johndoe,Jane,Doe,jane@example.com,JaneD,janed,Manager,JaneD,jane@example.com,jAneD,awine_glasses.jpg,awine_glasses.jpg,cancel checkout upload folder_,upload name,

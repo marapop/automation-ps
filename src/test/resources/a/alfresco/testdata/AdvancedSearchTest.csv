@@ -1,0 +1,3 @@
+Username,Password,Content Name,Content Title,Content Description,Content Body,User Role,First Name,Last Name,Client Pass,Client Name,User Mail,Search Name,Search Title,Search Keyword,Search Description,
+admin,admin,CName1,CTitle1,C descriptionnnnnn1,Body11  text for content to create,Collaborator,John,Doe,johndoe,john_dd,johnd,,true,true,true,
+admin,admin,CName1,CTitle1,C descriptionnnnnn1,Body11  text for content to create,Collaborator,John,Doe,johndoe,john_dd,johnd,true,,,,
